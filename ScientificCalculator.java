@@ -33,6 +33,9 @@ public class ScientificCalculator {
                 case 4:
                     performDivision(sc);
                     break;
+                case 5:
+                    performsquareroot(sc);
+                    break;
                 default:
                     System.out.println("Invalid input, Please enter an integer");
             }
@@ -46,6 +49,7 @@ public class ScientificCalculator {
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication");
         System.out.println("4. Division");
+        System.out.println("5. Sqaure root");
         System.out.println("0. Exit");
         System.out.println("============");
     }
@@ -102,6 +106,23 @@ public class ScientificCalculator {
             System.out.println("The result is: " + result);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input, Please enter an integer");
+            sc.nextLine();
+        }
+    }
+    public static void performsquareroot(Scanner sc){
+        try {
+            System.out.println("Enter a number: ");
+            double num1 = sc.nextDouble();
+            if (num1 < 0){
+                System.out.println("Error: You can not choose 0");
+            }
+            else{
+                double result = Math.sqrt(num1);
+                System.out.println("The result is: " + result);
+            }
+
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input, Please enter a number ");
             sc.nextLine();
         }
     }
