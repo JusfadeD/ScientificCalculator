@@ -49,6 +49,10 @@ public class ScientificCalculator {
                 case 9:
                     performtangent(sc);
                     break;
+                case 10:
+                    performnaturallog(sc);
+                    break;
+
 
                 default:
                     System.out.println("Invalid input, Please enter an integer");
@@ -69,7 +73,8 @@ public class ScientificCalculator {
         System.out.println("7. Sine (sin x in degrees)");
         System.out.println("8. cosine (cosine x in degrees)");
         System.out.println("9. Tangent (tan x in degrees)");
-        
+        System.out.println("10. Natural Logarithm (ln x)");
+
         System.out.println("============");
     }
 
@@ -201,6 +206,23 @@ public class ScientificCalculator {
             sc.nextLine();
         }
     }
+    public static void performnaturallog(Scanner sc){
+        try {
+            System.out.println("Enter a positive number: ");
+            double num = sc.nextDouble();
+
+            if (num <= 0) {
+                System.out.println("Error: Natural log is undefined for zero or negative numbers.");
+            } else {
+                double result = Math.log(num);
+                System.out.println("The result is: " + result);
+            }
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input, Please enter a number.");
+            sc.nextLine();
+        }
+    }
+
 
 }
 
