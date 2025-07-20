@@ -55,6 +55,9 @@ public class ScientificCalculator {
                 case 11:
                     performlog10(sc);
                     break;
+                case 12:
+                    performabsolute(sc);
+                    break;
 
 
                 default:
@@ -78,6 +81,8 @@ public class ScientificCalculator {
         System.out.println("9. Tangent (tan x in degrees)");
         System.out.println("10. Natural Logarithm (ln x)");
         System.out.println("11. Logarithm Base 10 (log₁₀ x)");
+        System.out.println("12. Absolute Value (|x|)");
+
 
 
         System.out.println("============");
@@ -238,6 +243,17 @@ public class ScientificCalculator {
                 double result = Math.log10(num);
                 System.out.println("The result is: " + result);
             }
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input, Please enter a number.");
+            sc.nextLine();
+        }
+    }
+    public static void performabsolute(Scanner sc){
+        try {
+            System.out.println("Enter a number: ");
+            double num = sc.nextDouble();
+            double result = Math.abs(num);
+            System.out.println("The result is: " + result);
         } catch (InputMismatchException e){
             System.out.println("Invalid input, Please enter a number.");
             sc.nextLine();
