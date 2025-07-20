@@ -40,6 +40,9 @@ public class ScientificCalculator {
                 case 6:
                     performpower(sc);
                     break;
+                case 7:
+                    performsine(sc);
+                    break;
                 default:
                     System.out.println("Invalid input, Please enter an integer");
             }
@@ -56,6 +59,7 @@ public class ScientificCalculator {
         System.out.println("4. Division");
         System.out.println("5. Sqaure root");
         System.out.println("6. Power (x^y)");
+        System.out.println("7. Sine (sin x in degrees)");
         System.out.println("============");
     }
 
@@ -141,6 +145,18 @@ public class ScientificCalculator {
             System.out.println("The result is "+ result);
         }
         catch (InputMismatchException e){
+            System.out.println("Invalid input, Please enter a number.");
+            sc.nextLine();
+        }
+    }
+    public static void performsine(Scanner sc){
+        try{
+            System.out.println("Enter angle in degrees: ");
+            double degrees = sc.nextDouble();
+            double radians = Math.toRadians(degrees);
+            double result = Math.sin(radians);
+            System.out.println("The result is: " + result);
+        } catch (InputMismatchException e){
             System.out.println("Invalid input, Please enter a number.");
             sc.nextLine();
         }
