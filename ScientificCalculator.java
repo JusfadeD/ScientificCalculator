@@ -70,6 +70,9 @@ public class ScientificCalculator {
                 case 16:
                     performmin(sc);
                     break;
+                case 17:
+                    performmax(sc);
+                    break;
 
 
                 default:
@@ -98,6 +101,7 @@ public class ScientificCalculator {
         System.out.println("14. Ceiling (Round Up)");
         System.out.println("15. Floor (Round Down)");
         System.out.println("16. Minimum of Two Numbers");
+        System.out.println("17. Maximum of Two Numbers");
         System.out.println("============");
     }
 
@@ -313,6 +317,19 @@ public class ScientificCalculator {
             double num2 = sc.nextDouble();
             double result = Math.min(num1, num2);
             System.out.println("The smaller value is: " + result);
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input, Please enter a number.");
+            sc.nextLine();
+        }
+    }
+    public static void performmax(Scanner sc){
+        try {
+            System.out.println("Enter first number: ");
+            double num1 = sc.nextDouble();
+            System.out.println("Enter second number: ");
+            double num2 = sc.nextDouble();
+            double result = Math.max(num1, num2);
+            System.out.println("The larger value is: " + result);
         } catch (InputMismatchException e){
             System.out.println("Invalid input, Please enter a number.");
             sc.nextLine();
