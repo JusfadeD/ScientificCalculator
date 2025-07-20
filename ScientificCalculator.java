@@ -52,6 +52,9 @@ public class ScientificCalculator {
                 case 10:
                     performnaturallog(sc);
                     break;
+                case 11:
+                    performlog10(sc);
+                    break;
 
 
                 default:
@@ -74,6 +77,8 @@ public class ScientificCalculator {
         System.out.println("8. cosine (cosine x in degrees)");
         System.out.println("9. Tangent (tan x in degrees)");
         System.out.println("10. Natural Logarithm (ln x)");
+        System.out.println("11. Logarithm Base 10 (log₁₀ x)");
+
 
         System.out.println("============");
     }
@@ -215,6 +220,22 @@ public class ScientificCalculator {
                 System.out.println("Error: Natural log is undefined for zero or negative numbers.");
             } else {
                 double result = Math.log(num);
+                System.out.println("The result is: " + result);
+            }
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input, Please enter a number.");
+            sc.nextLine();
+        }
+    }
+    public static void performlog10(Scanner sc){
+        try {
+            System.out.println("Enter a positive number: ");
+            double num = sc.nextDouble();
+
+            if (num <= 0) {
+                System.out.println("Error: Base-10 log is undefined for zero or negative numbers.");
+            } else {
+                double result = Math.log10(num);
                 System.out.println("The result is: " + result);
             }
         } catch (InputMismatchException e){
