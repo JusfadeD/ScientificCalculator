@@ -58,6 +58,9 @@ public class ScientificCalculator {
                 case 12:
                     performabsolute(sc);
                     break;
+                case 13:
+                    performround(sc);
+                    break;
 
 
                 default:
@@ -82,6 +85,8 @@ public class ScientificCalculator {
         System.out.println("10. Natural Logarithm (ln x)");
         System.out.println("11. Logarithm Base 10 (log₁₀ x)");
         System.out.println("12. Absolute Value (|x|)");
+        System.out.println("13. Round to Nearest Integer");
+
 
 
 
@@ -253,6 +258,17 @@ public class ScientificCalculator {
             System.out.println("Enter a number: ");
             double num = sc.nextDouble();
             double result = Math.abs(num);
+            System.out.println("The result is: " + result);
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input, Please enter a number.");
+            sc.nextLine();
+        }
+    }
+    public static void performround(Scanner sc){
+        try {
+            System.out.println("Enter a number: ");
+            double num = sc.nextDouble();
+            long result = Math.round(num);
             System.out.println("The result is: " + result);
         } catch (InputMismatchException e){
             System.out.println("Invalid input, Please enter a number.");
