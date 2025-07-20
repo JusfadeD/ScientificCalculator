@@ -64,6 +64,9 @@ public class ScientificCalculator {
                 case 14:
                     performceiling(sc);
                     break;
+                case 15:
+                    performfloor(sc);
+                    break;
 
 
                 default:
@@ -90,11 +93,7 @@ public class ScientificCalculator {
         System.out.println("12. Absolute Value (|x|)");
         System.out.println("13. Round to Nearest Integer");
         System.out.println("14. Ceiling (Round Up)");
-
-
-
-
-
+        System.out.println("15. Floor (Round Down)");
         System.out.println("============");
     }
 
@@ -285,6 +284,17 @@ public class ScientificCalculator {
             System.out.println("Enter a number: ");
             double num = sc.nextDouble();
             double result = Math.ceil(num);
+            System.out.println("The result is: " + result);
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input, Please enter a number.");
+            sc.nextLine();
+        }
+    }
+    public static void performfloor(Scanner sc){
+        try {
+            System.out.println("Enter a number: ");
+            double num = sc.nextDouble();
+            double result = Math.floor(num);
             System.out.println("The result is: " + result);
         } catch (InputMismatchException e){
             System.out.println("Invalid input, Please enter a number.");
