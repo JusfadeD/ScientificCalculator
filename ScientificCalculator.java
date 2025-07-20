@@ -61,6 +61,9 @@ public class ScientificCalculator {
                 case 13:
                     performround(sc);
                     break;
+                case 14:
+                    performceiling(sc);
+                    break;
 
 
                 default:
@@ -86,6 +89,8 @@ public class ScientificCalculator {
         System.out.println("11. Logarithm Base 10 (log₁₀ x)");
         System.out.println("12. Absolute Value (|x|)");
         System.out.println("13. Round to Nearest Integer");
+        System.out.println("14. Ceiling (Round Up)");
+
 
 
 
@@ -269,6 +274,17 @@ public class ScientificCalculator {
             System.out.println("Enter a number: ");
             double num = sc.nextDouble();
             long result = Math.round(num);
+            System.out.println("The result is: " + result);
+        } catch (InputMismatchException e){
+            System.out.println("Invalid input, Please enter a number.");
+            sc.nextLine();
+        }
+    }
+    public static void performceiling(Scanner sc){
+        try {
+            System.out.println("Enter a number: ");
+            double num = sc.nextDouble();
+            double result = Math.ceil(num);
             System.out.println("The result is: " + result);
         } catch (InputMismatchException e){
             System.out.println("Invalid input, Please enter a number.");
